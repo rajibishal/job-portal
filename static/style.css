@@ -1,0 +1,92 @@
+/* --- 1. GLOBAL DEEP DARK THEME --- */
+body {
+    background: radial-gradient(circle at center, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif; /* Cleaner, modern font */
+    color: #e0e0e0; /* Soft white text */
+}
+
+/* --- 2. NAVBAR POLISH --- */
+.navbar {
+    background: rgba(22, 33, 62, 0.95) !important;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: -webkit-linear-gradient(#00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient text */
+}
+
+/* --- 3. HERO SECTION & CARDS (THE FIX) --- */
+/* This forces the big box to be dark, not white */
+.glass-box {
+    background: rgba(255, 255, 255, 0.05); /* 5% White (See-through) */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: white; /* Forces text inside to be white */
+}
+
+/* --- 4. JOB CARDS --- */
+.card {
+    background: #1f2a48; /* Dark Blue-Grey background */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 198, 255, 0.15); /* Blue glow on hover */
+}
+
+.card-title {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.card-subtitle {
+    color: #a0a0a0 !important; /* Grey for subtitle */
+}
+
+.card-text {
+    color: #d1d1d1;
+}
+
+/* --- 5. BUTTONS & INPUTS --- */
+.btn-primary {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0072ff, #00c6ff);
+    box-shadow: 0 4px 20px rgba(0, 114, 255, 0.6);
+}
+
+.form-control {
+    background: #2a3455; /* Dark input background */
+    border: 1px solid #3b476b;
+    color: white;
+}
+
+.form-control:focus {
+    background: #2a3455;
+    color: white;
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+}
+
+.form-control::placeholder {
+    color: #8d9bb3;
+}
+

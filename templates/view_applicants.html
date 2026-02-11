@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Applicants for: {{ job.title }}</h3>
+<a href="/dashboard" class="btn btn-secondary mb-3">&larr; Back to Dashboard</a>
+
+<table class="table table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Applicant Name</th>
+            <th>Email</th>
+            <th>Date Applied</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for app in job.applications %}
+        <tr>
+            <td>{{ app.applicant.username }}</td>
+            <td><a href="mailto:{{ app.applicant.email }}">{{ app.applicant.email }}</a></td>
+            <td>{{ app.date_applied.strftime('%Y-%m-%d') }}</td>
+            <td><a href="mailto:{{ app.applicant.email }}" class="btn btn-sm btn-outline-primary">Contact</a></td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4" class="text-center">No applicants yet.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

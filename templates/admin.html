@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-white mb-4">Admin Dashboard</h2>
+
+<div class="card mb-4">
+    <div class="card-header bg-danger text-white">Manage Users</div>
+    <div class="card-body">
+        <table class="table text-white">
+            <thead><tr><th>ID</th><th>Name</th><th>Role</th><th>Action</th></tr></thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        {% if user.role != 'admin' %}
+                        <a href="/admin/delete_user/{{ user.id }}" class="btn btn-sm btn-danger">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-warning text-dark">Manage Jobs</div>
+    <div class="card-body">
+        <table class="table text-white">
+            <thead><tr><th>Title</th><th>Company</th><th>Action</th></tr></thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr>
+                    <td>{{ job.title }}</td>
+                    <td>{{ job.company }}</td>
+                    <td><a href="/admin/delete_job/{{ job.id }}" class="btn btn-sm btn-danger">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
