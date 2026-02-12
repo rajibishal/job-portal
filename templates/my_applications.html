@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>My Applications</h2>
+<h2 class="text-white">My Applications</h2>
 <div class="row mt-3">
     {% if applications %}
         {% for app in applications %}
@@ -8,7 +8,7 @@
             <div class="card shadow-sm border-left-primary">
                 <div class="card-body">
                     <h5 class="card-title">{{ app.job_listing.title }}</h5>
-                    <h6 class="text-muted">{{ app.job_listing.location }}</h6>
+                    <h6 class="text-white-50">{{ app.job_listing.location }}</h6>
                     <p class="mb-1">Applied on: {{ app.date_applied.strftime('%Y-%m-%d') }}</p>
                     <span class="badge bg-success">Applied</span>
                 </div>
@@ -16,7 +16,7 @@
         </div>
         {% endfor %}
     {% else %}
-        <p>You haven't applied to any jobs yet.</p>
+        <p class="text-white">You haven't applied to any jobs yet.</p>
     {% endif %}
 </div>
 {% endblock %}
